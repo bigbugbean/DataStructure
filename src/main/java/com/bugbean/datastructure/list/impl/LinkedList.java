@@ -135,8 +135,8 @@ public class LinkedList<E> implements List<E> {
     }
 
     private class Node<E> {
-        private Node<E> next;
         private E data;
+        private Node<E> next;
 
         @Override
         public String toString() {
