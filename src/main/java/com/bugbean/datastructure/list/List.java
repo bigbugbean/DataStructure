@@ -1,20 +1,14 @@
 package com.bugbean.datastructure.list;
 
 /**
+ * 线性表
+ *
  * @author dugm
- * @description 线性表
- * @date 2019-07-04 14:44
+ * @Description
  */
 public interface List<E> {
     /**
-     * 添加末尾元素
-     *
-     * @param e
-     */
-    void add(E e);
-
-    /**
-     * 中间插入元素
+     * 增
      *
      * @param index
      * @param e
@@ -22,25 +16,26 @@ public interface List<E> {
     void add(int index, E e);
 
     /**
-     * 移除元素
-     *
-     * @param e
-     */
-    void remove(E e);
-
-    /**
-     * 移除元素
+     * 删
      *
      * @param index
-     * @return
      */
-    E remove(int index);
+    void remove(int index);
 
     /**
-     * 获取元素
+     * 改
+     *
+     * @param index
+     * @param e
+     */
+    void set(int index, E e);
+
+    /**
+     * 查
      *
      * @param index
      * @return
      */
     E get(int index);
+
 }
