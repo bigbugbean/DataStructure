@@ -84,17 +84,6 @@ public class LRUCacheWithHashTable {
         size--;
     }
 
-    private Node getNode(int key) {
-        Node p = this.head.next;
-        while (p != null) {
-            if (p.key == key) {
-                return p;
-            }
-            p = p.next;
-        }
-        return null;
-    }
-
     private void addToHead(Node node) {
         node.pre = head;
         node.next = head.next;

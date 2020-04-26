@@ -1,6 +1,7 @@
 package com.bugbean.datastructure.list.impl;
 
 import com.bugbean.datastructure.list.LinkedList;
+import org.junit.Test;
 
 /**
  * 单链表
@@ -14,7 +15,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     class Node<E> {
         E data;
-        Node next;
+        Node<E> next;
 
         Node() {
         }
@@ -82,6 +83,39 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         }
         builder.append("null");
         return builder.toString();
+    }
+
+    /**
+     * 判断链表是否有环
+     *
+     * @return
+     */
+    public boolean hasLoop() {
+        Node<E> fast = head;
+        Node<E> slow = head;
+        int i = 0;
+        do {
+            i++;
+            if (fast.next == null || fast.next.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        } while (fast != slow);
+        System.out.println("执行了" + i + "次");
+        return true;
+    }
+
+    @Test
+    public void testHasLoop() {
+        SingleLinkedList<Integer> singleLinkedList = new SingleLinkedList<>();
+        for (int i = 0; i < 3; i++) {
+            singleLinkedList.add(i, i);
+        }
+        System.out.println(singleLinkedList);
+//        Node<Integer> node = (Node<Integer>) singleLinkedList.getNode(4);
+//        node.next = (Node<Integer>) singleLinkedList. head;
+        System.out.println(singleLinkedList.hasLoop());
     }
 
     public static void main(String[] args) {
