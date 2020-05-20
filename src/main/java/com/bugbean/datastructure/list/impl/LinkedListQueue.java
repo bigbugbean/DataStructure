@@ -38,6 +38,9 @@ public class LinkedListQueue<E> implements Queue<E> {
 
     @Override
     public E dequeue() {
+        if (head == null){
+            return null;
+        }
         E e = head.data;
         head = head.next;
         return e;
