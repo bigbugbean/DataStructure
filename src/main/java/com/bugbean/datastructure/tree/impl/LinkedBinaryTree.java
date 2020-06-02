@@ -2,6 +2,11 @@ package com.bugbean.datastructure.tree.impl;
 
 import com.bugbean.datastructure.tree.BinaryTree;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * 链式二叉树
  *
@@ -81,6 +86,29 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         postOrder(root);
     }
 
+    @Override
+    public void levelOrder() {
+
+        Queue<TreeNode<E>> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            List<E> list = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode<E> node = queue.poll();
+                list.add(node.data);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+
+            }
+            System.out.println(list);
+        }
+    }
+
     private void postOrder(TreeNode<E> node) {
         if (node == null) {
             return;
@@ -98,5 +126,7 @@ public class LinkedBinaryTree<E> implements BinaryTree<E> {
         binaryTree.inOrder();
         System.out.println("后序遍历");
         binaryTree.postOrder();
+        System.out.println("层序遍历");
+        binaryTree.levelOrder();
     }
 }

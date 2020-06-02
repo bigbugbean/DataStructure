@@ -24,4 +24,9 @@ public interface BinaryTree<E> {
      */
     void postOrder();
 
+    /**
+     * 层序遍历
+     */
+    void levelOrder();
+
 }

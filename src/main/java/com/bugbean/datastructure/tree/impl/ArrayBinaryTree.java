@@ -51,6 +51,13 @@ public class ArrayBinaryTree<E> implements BinaryTree<E> {
         postOrder(1);
     }
 
+    @Override
+    public void levelOrder() {
+        for (int i = 1; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+
     private void postOrder(int index) {
         if (index > array.length - 1) {
             return;
@@ -67,5 +74,7 @@ public class ArrayBinaryTree<E> implements BinaryTree<E> {
         binaryTree.inOrder();
         System.out.println("=============================");
         binaryTree.postOrder();
+        System.out.println("=============================");
+        binaryTree.levelOrder();
     }
 }
