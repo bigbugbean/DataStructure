@@ -17,17 +17,17 @@ import java.util.Queue;
  */
 public class LinkedBinaryTree<E> implements BinaryTree<E> {
 
-    class TreeNode<E> {
-        private TreeNode<E> left;
-        private TreeNode<E> right;
-        private E data;
+    protected static class TreeNode<E> {
+        protected TreeNode<E> left;
+        protected TreeNode<E> right;
+        protected E data;
 
         public TreeNode(E data) {
             this.data = data;
         }
     }
 
-    private TreeNode<E> root;
+    protected TreeNode<E> root;
 
     public LinkedBinaryTree(E... array) {
         TreeNode<E> node = null;
