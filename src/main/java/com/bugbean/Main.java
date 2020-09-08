@@ -92,7 +92,7 @@ public class Main {
 class T {
     /**
      * 学校排名
-     * 数组下标代表排名，值表示学校
+     * 数组下标代表排名-1，值表示学校
      */
     private String[] schoolRank;
 
