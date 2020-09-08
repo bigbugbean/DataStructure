@@ -16,7 +16,7 @@ public class NQueen {
     private int ways;
 
     public static void main(String[] args) {
-        new NQueen().solveNQueens(50);
+        new NQueen().solveNQueens(10);
     }
 
 
@@ -35,7 +35,7 @@ public class NQueen {
             for (String[] rowStr : chessboard) {
                 System.out.println(Arrays.toString(rowStr));
             }
-            System.out.println("======================================");
+            System.out.println("============================================================================");
             return;
         }
         for (int column = 0; column < chessboard.length; column++) {
